@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pricing.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <link rel="stylesheet" href="/js/main.js">
+    <title>Pricing</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="header-wrapper">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="/Images/dark-logo.png" alt="">
+                  </div>
+                  <div class="nav-menu" id="nav-menu">
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="/about.html">About</a></li>
+                      <li><a href="/pricing.html">Pricing</a></li>
+                      <li><a href="/speakers.html">Speakers</a></li>
+                      <li><a href="/blog.html">Blog</a></li>
+                    </ul>
+                  </div>
+        
+                  <div class="container" id="burger"  onclick="toggleBurger()" >
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </div>
+            </div>
+          
+
+          
+        </nav>
+
+        
+    </div>
+    <main>
+        <section class="pricing">
+            <div class="container">
+                <div class="pricing-container">
+                    <h3>Pricing Table</h3>
+                    <div class="pricing-grid">
+                        <div class="grid-price1">
+                            <div class="price-card-text">
+                                <h3>2k</h3>
+                                <p>Basic</p>
+                            </div>
+                            <div class="price-card">
+                                <div class="description">
+                                    <p>Stay tuned!Stay tuned!</p>
+                                    <p>Stay tuned!Stay tuned!</p>
+                                    <p>Stay tuned!Stay tuned!</p>
+                                </div>
+                                <a href="#" class="btn btn-cta">Get Ticket</a>
+                            </div>
+                        </div>
+                        <div class="grid-price1">
+                            <div class="price-card-text">
+                                <h3>5k</h3>
+                                <p>Premium</p>
+                            </div>
+                            <div class="price-card">
+                                <div class="description">
+                                    <p>Stay tuned!Stay tuned!</p>
+                                    <p>Stay tuned!Stay tuned!</p>
+                                    <p>Stay tuned!Stay tuned!</p>
+                                </div>
+                                <a href="#" class="btn btn-cta">Get Ticket</a>
+                            </div>
+                        </div>
+                        <div class="grid-price1">
+                            <div class="price-card-text">
+                                <h3>10k</h3>
+                                <p>Golden</p>
+                            </div>
+                            <div class="price-card">
+                                <div class="description">
+                                    <p>Stay tuned!Stay tuned!</p>
+                                    <p>Stay tuned!Stay tuned!</p>
+                                    <p>Stay tuned!Stay tuned!</p>
+                                </div>
+                                <a href="#" class="btn btn-cta">Get Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="form">
+            <div class="container">
+                <div class="form-container">
+                <h3>Reserve your Seat</h3>
+                    <form class="form-column">
+                        <div class="flex-column1">
+                            <input type="text" name="fullname" placeholder="Full Name" id="fullname">
+                        </div>
+                        <div class="flex-column2">
+                            <input type="text" name="email" placeholder="Email Address" id="email">
+                        </div>
+                        <div class="flex-column3">
+                            <input type="tel" name="phone" placeholder="Phone Number" id="phone">
+                        </div>
+                        <div class="flex-column4">
+                            <input type="text" name="occupation" placeholder="Occupation" id="occupation">
+                        </div>
+                        <div class="flex-column5">
+                            <input type="number" name="ticket" placeholder="Number of Ticket" id="ticket">
+                        </div>
+                        <div class="flex-column6">
+                            <button class="btn btn-primary" type="submit">Confirm Ticket</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="footer-container">
+                    <div class="footer-list">
+                        <div class="logo">
+                            <img src="/Images/dark-logo.png" alt="">
+                        </div>
+                        <!-- <p>A way forward</p> -->
+                        <ul>
+                            <li class="list-head"><a href="/pages/about.html">About TEDxFUTA</a></li>
+                            <li><a href="#">Meet the Speakers</a></li>
+                            <li><a href="#">Meet the Team</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                        <ul class="upper">
+                            <li><a href="#">Get your ticket</a></li>
+                            <li><a href="#">Volunteer</a></li>
+                            <li><a href="#">Sponsor</a></li>
+                        </ul>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><img src="/Images/twitter.png" alt=""></a>
+                        <a href="#"><img src="/Images/youtube.png" alt=""></a>
+                        <a href="#"><img src="/Images/instagram.png" alt=""></a>
+                        <a href="#"><img src="/Images/facebook.png" alt=""></a>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="foot">
+                        <p>c TEDxFUTA 2021</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const mobileNav = document.querySelector('.nav-menu-mobile');
+        function toggleNav() {
+            mobileNav.classList.toggle('open');
+        }
+    </script>
+
+</body>
+
+</html>
