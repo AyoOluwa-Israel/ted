@@ -77,9 +77,6 @@ a.active {
 }
 
 @media (min-width: 1024px) {
-  .nav-toggler {
-    display: none;
-  }
 
   .nav-brand img {
     width: 180px;
