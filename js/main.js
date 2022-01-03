@@ -41,4 +41,25 @@ form.addEventListener('submit', function(e) {
 		form.reset();
 
 
+
 })
+
+
+const payNow = (e) => {
+	e.preventDefault();
+
+	FlutterwaveCheckout({
+		public_key: "",
+		tx_ref: "tedxfuta_" + Math.floor((Math.random() * 10000000) + 1),
+		amount: document.getElementById("amount").value,
+		currency: "NGN",
+		customer: {
+			email: document.getElementById("email").value,
+			phonenumber: document.getElementById("phoneNumber").value,
+			name: document.getElementById("fullname").value
+		},
+		callback: function(data) {
+			console.log(data)
+		}
+	})
+}
