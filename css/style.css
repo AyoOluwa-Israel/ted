@@ -96,7 +96,10 @@
   font-weight: bolder;
   color: #000000;
   text-align: center;
-  margin-top: 2rem;
+}
+
+.heading{
+  margin-top: .5rem;
 }
 
 .red-line {
@@ -188,8 +191,6 @@
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  
-
 }
 
 .speaker-imageWrapper{
@@ -215,6 +216,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .image-align {
@@ -517,6 +519,11 @@
     display: block;
     text-align: center;
     padding: 0 5px;
+    font-size: 1.1rem;
+  }
+
+  .top {
+    margin-right: 40px;
     font-size: 1.1rem;
   }
 }
