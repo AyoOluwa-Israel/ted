@@ -1,6 +1,6 @@
 form.addEventListener('submit', function(e) {
-	e.preventDefault();
-    
+    e.preventDefault();
+   
     var fullname = document.getElementById("fullname").value
 	var email = document.getElementById("email").value
 	var phone_number = document.getElementById("phone_number").value
@@ -10,7 +10,7 @@ form.addEventListener('submit', function(e) {
    
   
     var handler = PaystackPop.setup({
-        key: 'pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8',
+        key: 'pk_test_cf31c9ce121a70cd11c6fee1689c80e3b3ef42be',
         email: email,
         amount: amount*100,
         ref: "TEDx"+Date.now(),
@@ -25,8 +25,7 @@ form.addEventListener('submit', function(e) {
         },
         callback: function(response){
             alert('success. transaction ref is ' + response.reference);
-                $.ajax({
-                            
+                $.ajax({        
                       url: "addpackagepayment.php",
                       data: "ref="+response.reference+"&amount="+amount+"&sub="+sub+"&contact_limit="+contact_limit+"&inothercur="+inothercur+"&details="+details+"&packagetype="+packagetype,
                       type: "POST",
@@ -35,18 +34,14 @@ form.addEventListener('submit', function(e) {
 
                       if(data=="success")
                           {
+				  alert(response);
+				  console.log(response)
                           alert('Payment Successful!');
                           }
                           else
                               alert(data);
-
-
                       }
                   });
-                
-            
-            
-            
         },
             onClose: function(){
         }
