@@ -5,12 +5,13 @@ form.addEventListener('submit', function(e) {
 	var email = document.getElementById("email").value
 	var phone_number = document.getElementById("phone_number").value
 	var occupation = document.getElementById("occupation").value
-	var no_of_ticket = parseInt(document.getElementById("no_of_ticket").value)
-    var amount= no_of_ticket * 10000;
+	//var no_of_ticket = parseInt(document.getElementById("no_of_ticket").value)
+    //var amount= no_of_ticket * 2000;
+    var amount= 2030;
    
   
     var handler = PaystackPop.setup({
-        key: 'pk_test_cf31c9ce121a70cd11c6fee1689c80e3b3ef42be',
+        key: 'pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8',
         email: email,
         amount: amount*100,
         ref: "TEDx"+Date.now(),
@@ -24,24 +25,14 @@ form.addEventListener('submit', function(e) {
             ]
         },
         callback: function(response){
-            alert('success. transaction ref is ' + response.reference);
-                $.ajax({        
-                      url: "addpackagepayment.php",
-                      data: "ref="+response.reference+"&amount="+amount+"&sub="+sub+"&contact_limit="+contact_limit+"&inothercur="+inothercur+"&details="+details+"&packagetype="+packagetype,
-                      type: "POST",
-                      success: function(data){
-                      data= data.trim();
-
-                      if(data=="success")
-                          {
-				  alert(response);
-				  console.log(response)
-                          alert('Payment Successful!');
-                          }
-                          else
-                              alert(data);
-                      }
-                  });
+            //alert('success. transaction ref is ' + response.reference);
+            var message = response.message;
+	    var status = response.status;
+	    var trans = response.trans;
+	    var transaction = response.transaction;
+	    var reference = response.reference;
+	    var trxref = response.trxref;
+	    alert(message,status,trans,transaction,reference,trxref)
         },
             onClose: function(){
         }
