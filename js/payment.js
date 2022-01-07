@@ -32,7 +32,12 @@ form.addEventListener('submit', function(e) {
 	    var transaction = response.transaction;
 	    var reference = response.reference;
 	    var trxref = response.trxref;
-	    alert(message,status,trans,transaction,reference,trxref)
+	    alert(message)
+		alert(status)
+		alert(trans)
+		alert(transaction)
+		alert(reference)
+		alert(trxref)
         },
             onClose: function(){
         }
