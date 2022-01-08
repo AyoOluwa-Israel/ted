@@ -5,25 +5,30 @@ burger.addEventListener("click", function () {
   navMenu.classList.toggle("open");
 });
 
-var partnersForm = document.getElementById("partnersForm");
-form.addEventListener("submit", function (e) {
+// const submitSponsor = document.getElementById("submitSponsor");
+// submitSponsor.addEventListener("click", function () {
+//   e.preventDefault();
+// });
+
+var sponsorsForm = document.getElementById("sponsorsForm");
+sponsorsForm.addEventListener("submit", function (e) {
   e.preventDefault();
   var first_name = document.getElementById("first_name").value;
-	var last_name = document.getElementById("last_name").value;
+  var last_name = document.getElementById("last_name").value;
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
   var message = document.getElementById("message").value;
-	var business_name = document.getElementById("business_name").value;
+  var business_name = document.getElementById("business_name").value;
 
   fetch("https://tedxfuta.herokuapp.com/partners_form", {
     method: "POST",
     body: JSON.stringify({
       first_name: first_name,
-			last_name: last_name,
+      last_name: last_name,
       email: email,
       phone: phone,
       message: message,
-			business_name: business_name,
+      business_name: business_name,
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
