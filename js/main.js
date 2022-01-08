@@ -10,8 +10,8 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
   var first_name = document.getElementById("first_name").value;
 	var last_name = document.getElementById("last_name").value;
-  var email = document.getElementById("contact-email").value;
-  var phone = document.getElementById("contact-phone").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
   var message = document.getElementById("message").value;
 	var business_name = document.getElementById("business_name").value;
 
@@ -23,6 +23,7 @@ form.addEventListener("submit", function (e) {
       email: email,
       phone: phone,
       message: message,
+			business_name: business_name,
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
