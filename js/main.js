@@ -50,6 +50,36 @@ const ticketForm = document.getElementById("ticketForm");
 
 ticketForm.addEventListener("submit", (e) => {
 	e.preventDefault();
+
+  var handler = PaystackPop.setup({
+    key: 'pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8',
+    email: email,
+    amount: amount*100,
+    ref: "TEDx"+Date.now(),
+    metadata: {
+        custom_fields: [
+            {
+                display_name: full_name,
+                variable_name: full_name,
+                value: phone
+            }
+        ]
+    },
+    callback: function(response){
+        //Log this information
+        var message = response.message;
+  var status = response.status;
+  var trans = response.trans;
+  var transaction = response.transaction;
+  var reference = response.reference;
+  var trxref = response.trxref;
+    },
+        onClose: function(){
+    }
+});
+
+handler.openIframe();
+
   const full_name = document.getElementById("full_name").value
   const email = document.getElementById("email").value
   const phone = document.getElementById("phone").value
@@ -84,34 +114,7 @@ ticketForm.addEventListener("submit", (e) => {
       alert("Invalid submission. Please Check your Fields");
     });
 
-    var handler = PaystackPop.setup({
-      key: 'pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8',
-      email: email,
-      amount: amount*100,
-      ref: "TEDx"+Date.now(),
-      metadata: {
-          custom_fields: [
-              {
-                  display_name: full_name,
-                  variable_name: full_name,
-                  value: phone
-              }
-          ]
-      },
-      callback: function(response){
-          //Log this information
-          var message = response.message;
-    var status = response.status;
-    var trans = response.trans;
-    var transaction = response.transaction;
-    var reference = response.reference;
-    var trxref = response.trxref;
-      },
-          onClose: function(){
-      }
-  });
-
-  handler.openIframe();
+    
 
   ticketForm.reset();
 });
