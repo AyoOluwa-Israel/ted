@@ -5,44 +5,44 @@ burger.addEventListener("click", function () {
   navMenu.classList.toggle("open");
 });
 
-// const sponsorsForm = document.getElementById("sponsorsForm");
-// if (sponsorsForm) {
-//   sponsorsForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const first_name = document.getElementById("first_name").value;
-//     const last_name = document.getElementById("last_name").value;
-//     const email = document.getElementById("email").value;
-//     const phone = document.getElementById("phone").value;
-//     const business_name = document.getElementById("business_name").value;
+const sponsorsForm = document.getElementById("sponsorsForm");
+if (sponsorsForm) {
+  sponsorsForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const first_name = document.getElementById("first_name").value;
+    const last_name = document.getElementById("last_name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const business_name = document.getElementById("business_name").value;
 
-//     fetch("https://tedxfuta.herokuapp.com/partners_form", {
-//       method: "POST",
-//       body: JSON.stringify({
-//         first_name: first_name,
-//         last_name: last_name,
-//         email: email,
-//         phone: phone,
-//         business_name: business_name,
-//       }),
-//       headers: {
-//         "Content-Type": "application/json; charset=UTF-8",
-//         "X-CSRFToken":
-//           "iAiX7PfFfpMhPcbz9712GdBnk08A9oljxChVjad8Ku5OxjdgQjpqwJHXEcoM0fw3",
-//       },
-//     })
-//       .then((response) => response.json())
-//       .then((response) => {
-//         console.log(response.data);
-//         alert("You have successfully submitted the form");
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//         alert("Invalid submission. Please Check your Fields");
-//       });
+    fetch("https://tedxfuta.herokuapp.com/partners_form", {
+      method: "POST",
+      body: JSON.stringify({
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        phone: phone,
+        business_name: business_name,
+      }),
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        "X-CSRFToken":
+          "iAiX7PfFfpMhPcbz9712GdBnk08A9oljxChVjad8Ku5OxjdgQjpqwJHXEcoM0fw3",
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response.data);
+        alert("You have successfully submitted the form");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Invalid submission. Please Check your Fields");
+      });
 
-//     sponsorsForm.reset();
-//   });
-// }
+    sponsorsForm.reset();
+  });
+}
 
 const ticketForm = document.getElementById("ticketForm");
 if (ticketForm) {
