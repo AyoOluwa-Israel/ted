@@ -6,16 +6,15 @@ burger.addEventListener("click", function () {
 });
 
 const sponsorsForm = document.getElementById("sponsorsForm");
-if (sponsorsForm){
+if (sponsorsForm) {
   sponsorsForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const first_name = document.getElementById("first_name").value;
     const last_name = document.getElementById("last_name").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
-    // var message = document.getElementById("message").value;
     const business_name = document.getElementById("business_name").value;
-  
+
     fetch("https://tedxfuta.herokuapp.com/partners_form", {
       method: "POST",
       body: JSON.stringify({
@@ -40,84 +39,82 @@ if (sponsorsForm){
         console.log(error);
         alert("Invalid submission. Please Check your Fields");
       });
-  
+
     sponsorsForm.reset();
   });
 }
 
-
 const ticketForm = document.getElementById("ticketForm");
-
-ticketForm.addEventListener("submit", (e) => {
-	e.preventDefault();
-
-  var handler = PaystackPop.setup({
-    key: 'pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8',
-    email: email,
-    amount: amount*100,
-    ref: "TEDx"+Date.now(),
-    metadata: {
+if (ticketForm) {
+  ticketForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+  
+    var handler = PaystackPop.setup({
+      key: "pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8",
+      email: email,
+      amount: amount * 100,
+      ref: "TEDx" + Date.now(),
+      metadata: {
         custom_fields: [
-            {
-                display_name: full_name,
-                variable_name: full_name,
-                value: phone
-            }
-        ]
-    },
-    callback: function(response){
+          {
+            display_name: full_name,
+            variable_name: full_name,
+            value: phone,
+          },
+        ],
+      },
+      callback: function (response) {
         //Log this information
         var message = response.message;
-  var status = response.status;
-  var trans = response.trans;
-  var transaction = response.transaction;
-  var reference = response.reference;
-  var trxref = response.trxref;
-    },
-        onClose: function(){
-    }
-});
-
-handler.openIframe();
-
-  const full_name = document.getElementById("full_name").value
-  const email = document.getElementById("email").value
-  const phone = document.getElementById("phone").value
-  const occupation = document.getElementById("occupation").value
-  const no_of_ticket = document.getElementById("no_of_ticket").value
-
-  const amount= 2030 * no_of_ticket;
-
-  fetch("https://tedxfuta.herokuapp.com/ticket_form", {
-    method: "POST",
-    body: JSON.stringify({
-      full_name: full_name,
-      email: email,
-      phone: phone,
-      occupation: occupation,
-      no_of_ticket: 1,
-    }),
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8",
-      "X-CSRFToken":
-        "BSDi3XXpkHSOF3YJ6W6VzwL2LTTmBLeiQUCgfiVSPMblna0qN8ujp2RC559ysCp2",
-    },
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      console.log(response.data);
-      alert("You have successfully submitted the form");
-    })
-
-    .catch((error) => {
-      console.log(error);
-      alert("Invalid submission. Please Check your Fields");
+        var status = response.status;
+        var trans = response.trans;
+        var transaction = response.transaction;
+        var reference = response.reference;
+        var trxref = response.trxref;
+      },
+      onClose: function () {},
     });
+  
+    handler.openIframe();
+  
+    const full_name = document.getElementById("full_name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const occupation = document.getElementById("occupation").value;
+    const no_of_ticket = document.getElementById("no_of_ticket").value;
+  
+    const amount = 2030 * no_of_ticket;
+  
+    fetch("https://tedxfuta.herokuapp.com/ticket_form", {
+      method: "POST",
+      body: JSON.stringify({
+        full_name: full_name,
+        email: email,
+        phone: phone,
+        occupation: occupation,
+        no_of_ticket: 1,
+      }),
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        "X-CSRFToken":
+          "BSDi3XXpkHSOF3YJ6W6VzwL2LTTmBLeiQUCgfiVSPMblna0qN8ujp2RC559ysCp2",
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response.data);
+        alert("You have successfully submitted the form");
+      })
+  
+      .catch((error) => {
+        console.log(error);
+        alert("Invalid submission. Please Check your Fields");
+      });
+  
+    ticketForm.reset();
+  });
+}
 
-    
-
-  ticketForm.reset();
-});
 
 //Paymet integration for Flutterwave
 
