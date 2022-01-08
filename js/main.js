@@ -17,7 +17,7 @@ sponsorsForm.addEventListener("submit", function (e) {
   var last_name = document.getElementById("last_name").value;
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
-  var message = document.getElementById("message").value;
+  // var message = document.getElementById("message").value;
   var business_name = document.getElementById("business_name").value;
 
   fetch("https://tedxfuta.herokuapp.com/partners_form", {
@@ -27,7 +27,7 @@ sponsorsForm.addEventListener("submit", function (e) {
       last_name: last_name,
       email: email,
       phone: phone,
-      message: message,
+      // message: message,
       business_name: business_name,
     }),
     headers: {
@@ -41,7 +41,7 @@ sponsorsForm.addEventListener("submit", function (e) {
       console.log(response.data);
     });
 
-  form.reset();
+		sponsorsForm.reset();
 });
 
 //Paymet integration for Flutterwave
