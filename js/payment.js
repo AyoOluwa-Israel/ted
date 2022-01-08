@@ -1,4 +1,4 @@
-form.addEventListener('submit', function(e) {
+ticketForm.addEventListener('submit', function(e) {
     e.preventDefault();
    
     var fullname = document.getElementById("fullname").value
