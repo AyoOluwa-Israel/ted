@@ -5,10 +5,7 @@ burger.addEventListener("click", function () {
   navMenu.classList.toggle("open");
 });
 
-// const submitSponsor = document.getElementById("submitSponsor");
-// submitSponsor.addEventListener("click", function () {
-//   e.preventDefault();
-// });
+
 
 var sponsorsForm = document.getElementById("sponsorsForm");
 sponsorsForm.addEventListener("submit", function (e) {
