@@ -10,7 +10,7 @@ form.addEventListener('submit', function(e) {
     var amount= 2030;
    
     var handler = PaystackPop.setup({
-        key: 'pk_test_cf31c9ce121a70cd11c6fee1689c80e3b3ef42be',
+        key: 'pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8',
         email: email,
         amount: amount*100,
         ref: "TEDx"+Date.now(),
