@@ -39,6 +39,7 @@ sponsorsForm.addEventListener("submit", function (e) {
     .then((response) => response.json())
     .then((response) => {
       console.log(response.data);
+			alert("You have successfully submitted the form")
     });
 
 		sponsorsForm.reset();
