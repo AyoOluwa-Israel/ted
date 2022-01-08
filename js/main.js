@@ -8,15 +8,18 @@ burger.addEventListener("click", function () {
 var partnersForm = document.getElementById("partnersForm");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  var name = document.getElementById("contact-name").value;
+  var first_name = document.getElementById("first_name").value;
+	var last_name = document.getElementById("last_name").value;
   var email = document.getElementById("contact-email").value;
   var phone = document.getElementById("contact-phone").value;
-  var message = document.getElementById("contact-message").value;
+  var message = document.getElementById("message").value;
+	var business_name = document.getElementById("business_name").value;
 
   fetch("https://tedxfuta.herokuapp.com/partners_form", {
     method: "POST",
     body: JSON.stringify({
       first_name: first_name,
+			last_name: last_name,
       email: email,
       phone: phone,
       message: message,
