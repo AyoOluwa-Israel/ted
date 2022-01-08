@@ -53,6 +53,8 @@ ticketForm.addEventListener("submit", (e) => {
   const occupation = document.getElementById("occupation");
   const no_of_ticket = document.getElementById("no_of_ticket");
 
+  const amount= 2030;
+
   fetch("https://tedxfuta.herokuapp.com/ticket_form", {
     method: "POST",
     body: JSON.stringify({
@@ -78,6 +80,35 @@ ticketForm.addEventListener("submit", (e) => {
       console.log(error);
       alert("Invalid submission. Please Check your Fields");
     });
+
+    var handler = PaystackPop.setup({
+      key: 'pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8',
+      email: email,
+      amount: amount*100,
+      ref: "TEDx"+Date.now(),
+      metadata: {
+          custom_fields: [
+              {
+                  display_name: fullname,
+                  variable_name: fullname,
+                  value: phone_number
+              }
+          ]
+      },
+      callback: function(response){
+          //Log this information
+          var message = response.message;
+    var status = response.status;
+    var trans = response.trans;
+    var transaction = response.transaction;
+    var reference = response.reference;
+    var trxref = response.trxref;
+      },
+          onClose: function(){
+      }
+  });
+
+  handler.openIframe();
 
   ticketForm.reset();
 });
