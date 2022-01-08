@@ -37,7 +37,11 @@ sponsorsForm.addEventListener("submit", function (e) {
     .then((response) => {
       console.log(response.data);
 			alert("You have successfully submitted the form")
-    });
+    })
+		.catch((error) => {
+			console.log(error)
+			alert("Invalid submission. Please Check your Fields")
+		})
 
 		sponsorsForm.reset();
 });
