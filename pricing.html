@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- <link rel="stylesheet" href="/js/main.js"> -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <title>Pricing</title>
   </head>
   <body>
@@ -43,14 +44,16 @@
             <div class="pricing-grid">
               <div class="grid-price1">
                 <div class="price-card-text">
+                  <p>Early Bird Ticket</p>
                   <h3>2k</h3>
-                  <p>Basic</p>
                 </div>
                 <div class="price-card">
                   <div class="description">
-                    <p>Stay tuned!Stay tuned!</p>
-                    <p>Stay tuned!Stay tuned!</p>
-                    <p>Stay tuned!Stay tuned!</p>
+                    <p>Disruptive Ideas</p>
+                    <p>Forward-Thinking</p>
+                    <p>Innovation and Purpose</p>
+                    <p>Comfortable Environment</p>
+                    <p>Masterclass by Industry experts</p>
                   </div>
                   <a href="#" class="btn btn-cta">Get Ticket</a>
                 </div>
@@ -63,7 +66,7 @@
         <div class="container">
           <div class="form-container">
             <h3>Reserve your Seat</h3>
-            <form class="form-column">
+            <form id="form" class="form-column">
               <div class="flex-column1">
                 <input type="text" name="fullname" placeholder="Full Name" id="fullname">
               </div>
@@ -71,16 +74,16 @@
                 <input type="text" name="email" placeholder="Email Address" id="email">
               </div>
               <div class="flex-column3">
-                <input type="tel" name="phone" placeholder="Phone Number" id="phone">
+                <input type="tel" name="phone" placeholder="Phone Number" id="phone_number">
               </div>
               <div class="flex-column4">
                 <input type="text" name="occupation" placeholder="Occupation" id="occupation">
               </div>
-              <div class="flex-column5">
-                <input type="number" name="ticket" placeholder="Number of Ticket" id="ticket">
-              </div>
+<!--               <div class="flex-column5">
+                <input type="number" name="ticket" placeholder="Number of Ticket" id="no_of_ticket">
+              </div> -->
               <div class="flex-column6">
-                <button class="btn btn-primary" type="submit">Confirm Ticket</button>
+                <button class="btn btn-primary" type="submit" >Purchase Ticket</button>
               </div>
             </form>
           </div>
@@ -121,6 +124,7 @@
         </div>
       </footer>
     </main>
+    <script src="js/payment.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
