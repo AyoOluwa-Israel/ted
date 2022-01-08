@@ -114,30 +114,4 @@ if (ticketForm) {
   });
 }
 
-//Paymet integration for Flutterwave
 
-// const payNow = (e) => {
-//   e.preventDefault();
-
-//   FlutterwaveCheckout({
-//     public_key: "",
-//     tx_ref: "tedxfuta_" + Math.floor(Math.random() * 10000000 + 1),
-//     amount: document.getElementById("amount").value,
-//     currency: "NGN",
-//     customer: {
-//       email: document.getElementById("email").value,
-//       phonenumber: document.getElementById("phoneNumber").value,
-//       name: document.getElementById("fullname").value,
-//     },
-//     callback: function (data) {
-//       // console.log(data)
-
-//       const refrence = data.tx_ref;
-//       alert("Payment was successfully Completed" + refrence);
-//     },
-//     customization: {
-//       title: "TEdxFUTA Ticketing Payments",
-//       description: "Fullterwave paym,ent integration for TedxFuta",
-//     },
-//   });
-// };
