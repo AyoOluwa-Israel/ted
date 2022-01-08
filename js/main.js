@@ -5,15 +5,13 @@ burger.addEventListener("click", function () {
   navMenu.classList.toggle("open");
 });
 
-
-
-var sponsorsForm = document.getElementById("sponsorsForm");
+const sponsorsForm = document.getElementById("sponsorsForm");
 sponsorsForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  var first_name = document.getElementById("first_name").value;
-  var last_name = document.getElementById("last_name").value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value;
+  const first_name = document.getElementById("first_name").value;
+  const last_name = document.getElementById("last_name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
   // var message = document.getElementById("message").value;
   var business_name = document.getElementById("business_name").value;
 
@@ -24,7 +22,6 @@ sponsorsForm.addEventListener("submit", function (e) {
       last_name: last_name,
       email: email,
       phone: phone,
-      // message: message,
       business_name: business_name,
     }),
     headers: {
@@ -36,14 +33,53 @@ sponsorsForm.addEventListener("submit", function (e) {
     .then((response) => response.json())
     .then((response) => {
       console.log(response.data);
-			alert("You have successfully submitted the form")
+      alert("You have successfully submitted the form");
     })
-		.catch((error) => {
-			console.log(error)
-			alert("Invalid submission. Please Check your Fields")
-		})
+    .catch((error) => {
+      console.log(error);
+      alert("Invalid submission. Please Check your Fields");
+    });
 
-		sponsorsForm.reset();
+  sponsorsForm.reset();
+});
+
+const ticketForm = document.getElementById("ticketForm");
+
+ticketForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+  const full_name = document.getElementById("full_name");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const occupation = document.getElementById("occupation");
+  const no_of_ticket = document.getElementById("no_of_ticket");
+
+  fetch("https://tedxfuta.herokuapp.com/ticket_form", {
+    method: "POST",
+    body: JSON.stringify({
+      full_name: full_name,
+      email: email,
+      phone: phone,
+      occupation: occupation,
+      no_of_ticket: no_of_ticket,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      "X-CSRFToken":
+        "BSDi3XXpkHSOF3YJ6W6VzwL2LTTmBLeiQUCgfiVSPMblna0qN8ujp2RC559ysCp2",
+    },
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response.data);
+      alert("You have successfully submitted the form");
+    })
+
+    .catch((error) => {
+      console.log(error);
+      alert("Invalid submission. Please Check your Fields");
+    });
+
+  ticketForm.reset();
 });
 
 //Paymet integration for Flutterwave
