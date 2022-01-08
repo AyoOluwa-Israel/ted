@@ -32,7 +32,7 @@ if (sponsorsForm) {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         alert("You have successfully submitted the form");
       })
       .catch((error) => {
@@ -53,9 +53,9 @@ if (ticketForm) {
     const phone = document.getElementById("phone").value;
     const occupation = document.getElementById("occupation").value;
     const no_of_ticket = 1;
-  
+
     const amount = 2030 * no_of_ticket;
-  
+
     var handler = PaystackPop.setup({
       key: "pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8",
       email: email,
@@ -81,11 +81,9 @@ if (ticketForm) {
       },
       onClose: function () {},
     });
-  
+
     handler.openIframe();
-  
-    
-  
+
     fetch("https://tedxfuta.herokuapp.com/ticket_form", {
       method: "POST",
       body: JSON.stringify({
@@ -106,16 +104,15 @@ if (ticketForm) {
         console.log(response.data);
         alert("You have successfully submitted the form");
       })
-  
+
       .catch((error) => {
         console.log(error);
         alert("Invalid submission. Please Check your Fields");
       });
-  
+
     ticketForm.reset();
   });
 }
-
 
 //Paymet integration for Flutterwave
 
