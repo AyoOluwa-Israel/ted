@@ -1,9 +1,9 @@
 form.addEventListener('submit', function(e) {
     e.preventDefault();
    
-    var fullname = document.getElementById("fullname").value
+    var fullname = document.getElementById("full_name").value
 	var email = document.getElementById("email").value
-	var phone_number = document.getElementById("phone_number").value
+	var phone_number = document.getElementById("phone").value
 	var occupation = document.getElementById("occupation").value
 	//var no_of_ticket = parseInt(document.getElementById("no_of_ticket").value)
     //var amount= no_of_ticket * 2000;
