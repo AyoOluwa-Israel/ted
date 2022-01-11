@@ -57,7 +57,7 @@ if (ticketForm) {
     const amount = 2030 * no_of_ticket;
 
     var handler = PaystackPop.setup({
-      key: "pk_test_cf31c9ce121a70cd11c6fee1689c80e3b3ef42be",
+      key: "pk_live_c669857beaa96ab7bd7619f4664a881d893669f4",
       email: email,
       amount: amount * 100,
       ref: "TEDx" + Date.now(),
