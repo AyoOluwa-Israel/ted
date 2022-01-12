@@ -539,4 +539,8 @@
   .header-content p {
     font-size: 16px;
   }
+
+  .nav-menu ul li a{
+    color: #fff !important;
+  }
 }
