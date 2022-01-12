@@ -58,7 +58,7 @@ if (ticketForm) {
 
     var handler = PaystackPop.setup({
      // key: "pk_live_c669857beaa96ab7bd7619f4664a881d893669f4",
-key: "pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8"; 
+key: "pk_test_3ac6b3119921f82929b5a67862bd4bfc273468d8", 
       email: email,
       amount: amount * 100,
       ref: "TEDx" + Date.now(),
