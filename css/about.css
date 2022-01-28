@@ -52,12 +52,13 @@
 .image-bt{
     width: 92px;
     height: 92px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .image-bt img{
     width: 100%;
     height: 100%;
+    border-radius: 50%;
 }
 
 .team-grid-container{
