@@ -54,11 +54,10 @@ if (ticketForm) {
     const occupation = document.getElementById("occupation").value;
     const no_of_ticket = 1;
 
-<<<<<<< HEAD
+
     const amount =  3145 * no_of_ticket;
-=======
-    const amount = 2032 * no_of_ticket;
->>>>>>> 5d0834109d4bf4d8da17f76173eb250716439181
+
+
 
     var handler = PaystackPop.setup({
      key: "pk_live_c669857beaa96ab7bd7619f4664a881d893669f4",
