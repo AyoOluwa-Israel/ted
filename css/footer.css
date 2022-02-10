@@ -53,6 +53,10 @@ margin-right: 30px;
     margin-top: -58px;
 }
 
+.logo{
+    display: none;
+}
+
 
 
 
@@ -67,6 +71,10 @@ margin-right: 30px;
         width: 10px;
         margin-right: 10px;
         margin-bottom: 15px;
+    }
+
+    .logo{
+        display: block;
     }
 
 

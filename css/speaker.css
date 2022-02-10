@@ -3,20 +3,18 @@
 @import "./navbar.css";
 @import "./footer.css";
 
-
-    
-.tuned{
-    width: 100px;
-    height: 50px;
-    padding: 20px;
-    margin: 3rem auto;
-    background-color: rgba(230, 43, 30, 0.04);
-    height: 50vh;
+.image-sk img{
+    width: 100%;
 }
 
+.image-sk{
+    width: 200px;
+    height: 200px;
+}
 
-.tuned p{
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.54);
+@media (min-width: 1024px){
+    .image-sk{
+        width: 250px;
+        height: 250px;
+    }
 }
